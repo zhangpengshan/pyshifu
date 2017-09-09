@@ -1,7 +1,7 @@
 # python-repo-template
 
-[![Build Status](https://travis-ci.org/kyhau/python-repo-template.svg?branch=master)](https://travis-ci.org/kyhau/python-repo-template)
-[![codecov](https://codecov.io/gh/kyhau/python-repo-template/branch/master/graph/badge.svg)](https://codecov.io/gh/kyhau/python-repo-template)
+[![Build Status](https://travis-ci.org/wuhaifengdhu/pypi-starter.svg?branch=master)](https://travis-ci.org/wuhaifengdhu/pypi-starter)
+[![codecov](https://codecov.io/gh/wuhaifengdhu/pypi-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/wuhaifengdhu/pypi-starter)
 
 This is a template repository that you can use to quickly create a python application that can be built, tested, and released as an internal python module.
 
@@ -12,7 +12,7 @@ This is a template repository that you can use to quickly create a python applic
 mkdir new_repo_name
 cd new_repo_name
 git init
-git pull https://github.com/kyhau/python-repo-template
+git pull https://github.com/wuhaifengdhu/pypi-starter
 ```
 
 ## Build
@@ -39,3 +39,30 @@ pip install -r requirements-build.txt
 # run the python tests
 tox -r
 ```
+
+## upload to pypi
+* Register your account in [[[https://pypi.org/static/images/logo-small.6eef541e.svg|alt="PyPi"|height=210px|width=210px]]](https://pypi.org/)
+* Create file .pypirc in your home folder with 600.    
+```[distutils]
+index-servers =
+  pypi
+  pypitest
+
+[pypi]
+repository=https://upload.pypi.org/legacy/
+username=your_username
+password=your_password
+
+[pypitest]
+repository=https://test.pypi.org/legacy/
+username=your_username
+password=your_password
+``` 
+* Upload your repository
+```
+Python setup.py bidet_wheel —universal
+Twine upload dist/*
+```        
+
+
+

@@ -11,13 +11,14 @@ if os.environ.get("BUILD_LIB") == "1":
 
 base_dir = os.path.dirname(__file__)
 
-__author__ = "Kay Hau"
-__email__ = "virtualda@gmail.com"
+__author__ = "Wu Haifeng"
+__email__ = "wuhaifengdhu@163.com"
 
+# Change this line to the module name you want to create
 __title__ = "module"
 __version__ = "1.0.0"
 __summary__ = "This package creates a framework for python packages to be built."
-__uri__ = "https://github.com/kyhau/python-repo-template"
+__uri__ = "https://github.com/wuhaifengdhu/pypi-starter"
 
 __requirements__ = [
     'six>=1.10.0'
