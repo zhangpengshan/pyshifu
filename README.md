@@ -1,4 +1,4 @@
-# python-repo-template
+# pypi starter project
 
 [![Build Status](https://travis-ci.org/wuhaifengdhu/pypi-starter.svg?branch=master)](https://travis-ci.org/wuhaifengdhu/pypi-starter)
 [![codecov](https://codecov.io/gh/wuhaifengdhu/pypi-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/wuhaifengdhu/pypi-starter)
@@ -41,7 +41,7 @@ tox -r
 ```
 
 ## upload to pypi
-* Register your account in [[[https://pypi.org/static/images/logo-small.6eef541e.svg|alt="PyPi"|height=210px|width=210px]]](https://pypi.org/)
+* Register your account in ![pypi](https://pypi.org/)
 * Create file .pypirc in your home folder with 600.    
 ```[distutils]
 index-servers =
