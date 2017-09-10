@@ -15,9 +15,9 @@ __author__ = "Wu Haifeng"
 __email__ = "wuhaifengdhu@163.com"
 
 # Change this line to the module name you want to create
-__title__ = "module"
+__title__ = "shifu"
 __version__ = "1.0.0"
-__summary__ = "This package creates a framework for python packages to be built."
+__summary__ = "An end-to-end machine learning and data mining framework on Hadoop."
 __uri__ = "https://github.com/wuhaifengdhu/pypi-starter"
 
 __requirements__ = [
