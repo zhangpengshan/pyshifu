@@ -6,28 +6,28 @@ python shifu is a project provide support to use shifu as python module.
 Website: http://shifu.ml
 
 
-##Installation
-###Dependencies
+## Installation
+### Dependencies
 shifu requires:
 
 
-###User installation
+### User installation
 
 
-##Development
-###Important links
+## Development
+### Important links
 
-###Source code
+### Source code
 
-###Setting up a development environment
+### Setting up a development environment
 
-###Testing
+### Testing
 
-###Submitting a Pull Request
+### Submitting a Pull Request
 
-##Project History
+## Project History
 
-##Help and Support
-###Documentation
-###Communication
-###Citation
+## Help and Support
+### Documentation
+### Communication
+### Citation
