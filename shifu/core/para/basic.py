@@ -21,3 +21,6 @@ class Basic(Check):
 
     def _get_default_custom_paths(self):
         self._custom_paths = []
+
+
+
