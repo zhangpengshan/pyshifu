@@ -3,38 +3,46 @@ Shifu client to call java module.
 """
 from __future__ import print_function
 from util.helper import Helper
+from core.shell import Shell
+from core.enums import CommandRunningStatus
 
 
-class Shifu(object):
-    def __init__(self, java_options=None):
-        self._name = None
-        self._path = ""
-        self._current_step = ""
-        self._java_options = java_options if java_options is not None \
-            else "-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70"
-        self._main_class = "ml.shifu.shifu.ShifuCLI"
-        self._class_path = ".:${SHIFU_HOME}/conf:${SHIFU_HOME}/log4jconf:${CLASSPATH}"
+class _Shifu(Shell):
+    def __init__(self):
+        super(_Shifu, self).__init__()
 
-    def new(self, name):
-        self._name = name
-        command_list = ['java', self._java_options, '-classpath', self._class_path, self._main_class, name]
-        output = Helper.run_shell(command_list)
-        print(output)
+    def new(self, name, work_dir=None):
+        self._init_working_directory(work_dir, name)
+        command_list = ['sh', self._main_script, 'new', self._name]
+        status, output = Helper.run_shell(command_list)
+        if status is CommandRunningStatus.SUCCESS:
+            self._change_to_model_dir()
+            print("You can edit file:" + self._model_config_file)
+            Helper.edit_file(self._os_platform, self._model_config_file)
+
+    def __run_command(self, command):
+        command_list = ['sh', self._main_script, command]
+        Helper.run_shell(command_list)
 
     def init(self):
-        print ("init model: %s" % self._name)
+        self.__run_command("init")
 
-    def status(self):
-        print ("status model: %s" % self._name)
+    def stats(self):
+        self.__run_command("stats")
 
     def norm(self):
-        print("norm model: %s" % self._name)
+        self.__run_command("norm")
 
     def varsel(self):
-        print ("varsel model: %s" % self._name)
+        self.__run_command("varsel")
 
     def train(self):
-        print ("train model: %s" % self._name)
+        self.__run_command("train")
 
     def eval(self):
-        print ("eval model: %s" % self._name)
+        self.__run_command("eval")
+
+
+shifu = _Shifu()
+
+
