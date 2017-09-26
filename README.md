@@ -31,3 +31,8 @@ shifu requires:
 ### Documentation
 ### Communication
 ### Citation
+
+### Thanks
+1, Thanks kyhau for python-repo-template project to create an empty python module.
+https://github.com/kyhau/python-repo-template
+
