@@ -23,7 +23,8 @@ __summary__ = "An end-to-end machine learning and data mining framework on Hadoo
 __uri__ = "https://github.com/wuhaifengdhu/python-shifu"
 
 __requirements__ = [
-    'six>=1.11.0'
+    'six>=1.11.0',
+    'pypandoc>=1.4'
 ]
 
 
