@@ -1,3 +1,6 @@
+from __future__ import absolute_import, division, print_function
+
+
 class Platform(object):
     WINDOWS, LINUX, MAC = range(3)
 

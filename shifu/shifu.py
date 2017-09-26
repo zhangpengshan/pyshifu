@@ -1,10 +1,7 @@
-"""
-Shifu client to call java module.
-"""
-from __future__ import print_function
-from util.helper import Helper
-from core.shell import Shell
-from core.enums import CommandRunningStatus
+from __future__ import absolute_import
+from shifu.util.helper import Helper
+from shifu.core.shell import Shell
+from shifu.core.enums import CommandRunningStatus
 
 
 class _Shifu(Shell):

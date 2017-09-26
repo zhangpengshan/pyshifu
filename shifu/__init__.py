@@ -1,7 +1,5 @@
-# pylint: disable-msg=W0614,W0401,W0611,W0622
-# flake8: noqa
+from __future__ import absolute_import, division, print_function
 from shifu import shifu
-from util.helper import Helper
 
 
 __docformat__ = 'restructuredtext'
