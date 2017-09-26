@@ -17,6 +17,7 @@ class Helper(object):
         command_running_output = None
         try:
             command_running_output = check_output(common_list)
+            command_running_output = command_running_output.decode("utf-8")
             print (command_running_output)
         except CalledProcessError as errorMsg:
             command_running_status = CommandRunningStatus.FAILED
