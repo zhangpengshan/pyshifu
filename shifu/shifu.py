@@ -13,7 +13,7 @@ class _Shifu(Shell):
 
     def new(self, name, work_dir=None):
         self._init_working_directory(work_dir, name)
-        command_list = ['sh', self._main_script, 'new', self._name]
+        command_list = ['bash', self._main_script, 'new', self._name]
         status, output = Helper.run_shell(command_list)
         if status is CommandRunningStatus.SUCCESS:
             self._change_to_model_dir()
@@ -21,7 +21,7 @@ class _Shifu(Shell):
             Helper.edit_file(self._os_platform, self._model_config_file)
 
     def __run_command(self, command):
-        command_list = ['sh', self._main_script, command]
+        command_list = ['bash', self._main_script, command]
         Helper.run_shell(command_list)
 
     def init(self):
