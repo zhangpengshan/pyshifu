@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/wuhaifengdhu/python-shifu.svg?branch=master)](https://travis-ci.org/wuhaifengdhu/python-shifu)
-[![codecov](https://codecov.io/gh/wuhaifengdhu/python-shifu/branch/master/graph/badge.svg)](https://codecov.io/gh/wuhaifengdhu/python-shifu)
+[![Build Status](https://travis-ci.org/ShifuML/pyshifu.svg?branch=master)](https://travis-ci.org/ShifuML/pyshifu)
+
 # python shifu
 python shifu is a project provide support to use shifu as python module.
 

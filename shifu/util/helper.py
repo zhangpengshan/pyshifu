@@ -28,10 +28,6 @@ class Helper(object):
         return environ[variable_name] if variable_name in environ else None
 
     @staticmethod
-    def exist_file_in_current_path(file_name):
-        return path.exists(path.join(".", file_name))
-
-    @staticmethod
     def get_os_platform():
         if platform == "linux" or platform == "linux2":
             return Platform.LINUX

@@ -13,13 +13,12 @@ class TestHelper(unittest.TestCase):
 
     def test_run_shell(self):
         status, result = Helper.run_shell(['pwd', ])
-        self.assertEqual(result.strip(), Helper.get_environment_variable("PWD"))
+        self.assertEqual(result.strip(), Helper.get_current_path())
 
     def test_get_environment_variable(self):
-        self.assertEqual(Helper.get_environment_variable("PWD"), Helper.get_current_path())
-
-    def test_exist_file_in_current_path(self):
-        self.assertTrue(Helper.exist_file_in_current_path("__init__.py"))
+        current_path = Helper.get_environment_variable("PWD")
+        if current_path is not None:
+            self.assertEqual(Helper.get_environment_variable("PWD"), Helper.get_current_path())
 
     def test_get_shifu_home(self):
         self.assertEqual(Helper.get_shifu_home().split('/')[-1], "shifu")
