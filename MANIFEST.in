@@ -11,3 +11,5 @@
 include README.md
 
 include ReleaseNotes.md
+
+include shifu/java/bin/*

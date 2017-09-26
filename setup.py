@@ -1,6 +1,8 @@
 from __future__ import absolute_import, division, print_function
 from setuptools import setup, find_packages
 import os
+from os.path import isdir, isfile
+import glob
 
 
 # Makes setup work inside of a virtualenv
@@ -16,9 +18,9 @@ __email__ = "wuhaifengdhu@163.com"
 
 # Change this line to the module name you want to create
 __title__ = "shifu"
-__version__ = "1.0.0"
+__version__ = "1.0.5"
 __summary__ = "An end-to-end machine learning and data mining framework on Hadoop."
-__uri__ = "https://github.com/wuhaifengdhu/pypi-starter"
+__uri__ = "https://github.com/wuhaifengdhu/python-shifu"
 
 __requirements__ = [
     'six>=1.10.0'
@@ -27,12 +29,41 @@ __requirements__ = [
 with open(os.path.join(base_dir, "README.md")) as f:
     long_description = f.read()
 
+
+def get_shifu_package_data():
+    _data_files = add_recursively('shifu/java/')
+    print (_data_files)
+    return _data_files
+
+
+def add_recursively(directory):
+    _data_files = {}
+    if not directory.endswith("/"):
+        directory += "/"
+    items = glob.glob(directory + '*')
+    _files = []
+    _dirs = []
+    for item in items:
+        if isfile(item):
+            _files.append(item)
+        elif isdir(item):
+            _dirs.append(item)
+    # print ("_files: " + str(_files))
+    # print ("_dirs: " + str(_dirs))
+    _data_files[directory] = _files
+    for _dir in _dirs:
+        _data_files.update(add_recursively(_dir))
+    return _data_files
+
+
 setup(
     name=__title__,
     version=__version__,
     description=__summary__,
     long_description=long_description,
     packages=find_packages(exclude=['tests']),
+    include_package_data=True,
+    package_data=get_shifu_package_data(),
     author=__author__,
     author_email=__email__,
     url=__uri__,
