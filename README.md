@@ -66,8 +66,7 @@ pip install -r requirements-build.txt
 tox -r
 ```
 ### Submitting a Pull Request
-Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our 
-[guide](doc/developers/guide.md)
+Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our [Develop guide](doc/developers/guide.md).
 ## Project History
 This project is started for help user using shifu in python environment. 
 
@@ -78,10 +77,10 @@ This project is started for help user using shifu in python environment.
 * FAQ page: https://github.com/ShifuML/pyshifu/wiki/FAQ-page
 
 ### Communication
-You can leave your message here, [Message Board](https://github.com/ShifuML/pyshifu/wiki/Message-Board)
+You can leave your message here, [Message Board](https://github.com/ShifuML/pyshifu/wiki/Message-Board).
 
 ### Citation
-If you use scikit-learn in a scientific publication, we would appreciate [citations](https://github.com/ShifuML/pyshifu/wiki/Citations)
+If you use scikit-learn in a scientific publication, we would appreciate [Citations](https://github.com/ShifuML/pyshifu/wiki/Citations).
 
 ### Thanks
 1, Thanks kyhau for python-repo-template project to create an empty python module.
