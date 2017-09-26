@@ -78,11 +78,9 @@ class Helper(object):
             raise ValueError("parameter invalid file name is None or not exist!")
         if not Platform.contain(_platform):
             raise ValueError("parameter platform is not Platform Enum")
-        if _platform is Platform.LINUX:
-            Helper.run_shell(["vi", file_name])
-        elif _platform is Platform.MAC:
+        if _platform is Platform.MAC:
             Helper.run_shell(["open", file_name])
-        else:
+        elif _platform is Platform.WINDOWS:
             Helper.run_shell(["start", file_name])
 
 
