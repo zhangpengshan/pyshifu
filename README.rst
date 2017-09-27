@@ -1,18 +1,15 @@
-|Build Status|
-
 pyshifu
 =======
+|Build Status|
 
-pyshifu is a Python module for machine learning build on top of java
-version shifu, which provided large scalability of build high accuracy
-models with TB level data set in hours.
 
-| More details about shifu, visit shifu's wiki page:
-https://github.com/shifuml/shifu/wiki
-| |Shifu Pipeline|
+pyshifu is a Python module for machine learning build on top of java version shifu, which provided large scalability of
+build high accuracy models with TB level data set in hours.
 
-pyshifu provided the basic operations in the pipeline above, such as
-new, init, stats...
+More details about shifu, visit shifu's wiki page: https://github.com/shifuml/shifu/wiki
+|Shifu Pipeline|
+
+pyshifu provided the basic operations in the pipeline above, such as new, init, stats...
 
 Installation
 ------------
@@ -20,34 +17,28 @@ Installation
 Dependencies
 ~~~~~~~~~~~~
 
-| shifu requires:
-| \* Python(>=2.7 or >=3.3)
-| \* Java(>=7.0)
+shifu requires:
+- Python(>=2.7 or >=3.3)
+- Java(>=7.0)
 
-| Shifu Optional:
-| \* Hadoop
+shifu Optional:
+- Hadoop
 
-| Platform requirement:
-| \* Mac
-| \* Linux
-| \* Windows(>=10586.1007) As pyshifu currently depended on bash script
-to set environment, so windows without shell support could not work
+Platform requirement:
+- Mac
+- Linux
+- Windows(>=10586.1007)
+As pyshifu currently depended on bash script to set environment, so windows without shell support could not work
 correctly. In the future, we will remove all shell script.
 
 User installation
 ~~~~~~~~~~~~~~~~~
 
-The easiest way to install pyshifu is using pip:
+The easiest way to install pyshifu is using pip::
+    pip install pyshifu
 
-.. code:: bazaar
-
-pip install pyshifu
-
-or use conda:
-
-.. code:: bazaar
-
-conda install pyshifu
+or use conda::
+    conda install pyshifu
 
 Development
 -----------
@@ -70,7 +61,7 @@ Source code
 
 You can check the latest sources with the command:
 
-.. code:: bazaar
+.. code::
 
 git clone https://github.com/ShifuML/pyshifu.git
 
@@ -86,7 +77,7 @@ Testing
 This project intend to make the python code 100% test coverage. You can
 test by tox.
 
-.. code:: bazaar
+.. code::
 
 pip install -r requirements-build.txt
 # run the python tests
@@ -128,6 +119,5 @@ Thanks
 1, Thanks kyhau for python-repo-template project to create an empty
 python module. https://github.com/kyhau/python-repo-template
 
-.. |Build Status| image:: https://travis-ci.org/wuhaifengdhu/pyshifu.svg?branch=master
-:target: https://travis-ci.org/wuhaifengdhu/pyshifu
+.. |Build Status| image:: https://travis-ci.org/wuhaifengdhu/pyshifu.svg?branch=master :target: https://travis-ci.org/wuhaifengdhu/pyshifu
 .. |Shifu Pipeline| image:: doc/images/logo/pipline.png

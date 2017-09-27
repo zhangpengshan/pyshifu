@@ -5,7 +5,7 @@ from shifu import shifu
 __docformat__ = 'restructuredtext'
 
 # Let users know if they're missing any of our hard dependencies
-hard_dependencies = ("six", "pypandoc")
+hard_dependencies = ("six", )
 missing_dependencies = []
 
 for dependency in hard_dependencies:

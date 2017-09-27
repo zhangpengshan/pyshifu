@@ -23,28 +23,17 @@ __summary__ = "An end-to-end machine learning and data mining framework on Hadoo
 __uri__ = "https://github.com/wuhaifengdhu/python-shifu"
 
 __requirements__ = [
-    'six>=1.11.0',
-    'pypandoc>=1.4'
+    'six>=1.11.0'
 ]
 
 
 def get_shifu_package_data():
     _data_files = add_recursively('shifu/java/')
-    print (_data_files)
     return _data_files
 
 
-def get_long_description():
-    _long_description = __summary__
-    try:
-        import pypandoc
-        _long_description = pypandoc.convert('README.md', 'rst')
-    except(IOError, ImportError):
-        with open(os.path.join(base_dir, "README.md")) as f:
-            _long_description = f.read()
-    return _long_description
-
-long_description = get_long_description()
+with open(os.path.join(base_dir, "README.rst")) as f:
+    long_description = f.read()
 
 
 def add_recursively(directory):
