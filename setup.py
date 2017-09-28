@@ -18,9 +18,9 @@ __email__ = "wuhaifengdhu@163.com"
 
 # Change this line to the module name you want to create
 __title__ = "pyshifu"
-__version__ = "0.0.5"
+__version__ = "0.0.7"
 __summary__ = "An end-to-end machine learning and data mining framework on Hadoop."
-__uri__ = "https://github.com/wuhaifengdhu/python-shifu"
+__uri__ = "https://github.com/shifuml/pyshifu"
 
 __requirements__ = [
     'six>=1.11.0'

@@ -12,4 +12,15 @@ include README.md
 
 include ReleaseNotes.md
 
-include shifu/java/bin/*
+include pyshifu/java/bin/*
+include pyshifu/java/conf/*
+include pyshifu/java/example/cancer-judgement/DataStore/DataSet1/*
+include pyshifu/java/example/cancer-judgement/DataStore/EvalSet1/*
+include pyshifu/java/example/cancer-judgement/DataStore/Full_data/*
+include pyshifu/java/example/cancer-judgement/ModelStore/ModelSet1/*
+include pyshifu/java/example/cancer-judgement/ModelStore/ModelSet2/*
+include pyshifu/java/example/cancer-judgement/ModelStore/ModelSet3/*
+include pyshifu/java/lib/*
+include pyshifu/java/log4jconf/*
+include pyshifu/java/scripts/*
+include pyshifu/java/slfloglib/*
