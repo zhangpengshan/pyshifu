@@ -2,7 +2,7 @@
 
 ## Pipeline in Shifu
 
-![Shifu Pipeline](doc/images/pipline/pipline.png)
+![Shifu Pipeline](pipline/pipline.png)
 
 This picture shows Shifu's whole pipeline and just do some json configurations, whole pipeline will be executed and later you can get your first ML model.
 
@@ -27,7 +27,7 @@ from pyshifu import shifu
 ```
 
 * shifu new
-![shifu new](doc/images/pipline/new.png)
+![shifu new](pipline/new.png)
 
     This command will create a new dataset folder for training, in the new folder, You will find some auto-created files:
     1. ModelConfig.json: Some input and model pipeline configurations and which will be discussed more later.
@@ -84,7 +84,7 @@ from pyshifu import shifu
     Mostly in this part, user should config basic and dataSet path well, then in next steps all running are based on successful data paths and modes.    
    
 * shifu init
-![shifu init](doc/images/pipline/init.png)
+![shifu init](pipline/init.png)
 
      All next steps from init should be run in <data set folder>, this design is to make sure your running in different data sets are doable. 
 
@@ -93,7 +93,7 @@ from pyshifu import shifu
      So far numerical or categorical columns must be specified by users in columns/categorical.column.names. This is very important to do the right column stats and transform. Please do make sure you configure categorical columns here well.
 
 * shifu stats
-![shifu stats](doc/images/pipline/stats.png)
+![shifu stats](pipline/stats.png)
 
      Stats step is used to collect statistics like mean, stddev, ks and other info by using MapReduce/Pig/Spark jobs.
 
@@ -117,7 +117,7 @@ from pyshifu import shifu
 
 * shifu norm
 
-![shifu new](doc/images/pipline/new.png)
+![shifu new](pipline/new.png)
      
      For logistic regression or neural network models, training input data should be normalized like z-score normalization or maxmin normalization. Such normalization methods are both supported in this step.
      
@@ -140,7 +140,7 @@ from pyshifu import shifu
      'woe' norm type is very important, it leverages binning information to transform numerical values into discrete values. This norm type improves model stability very well.
      
 * shifu varsel
-![shifu varsel](doc/images/pipline/varsel.png)
+![shifu varsel](pipline/varsel.png)
 
   After stats and norm, varsel step is used for feature selection according to some statistic information like KS or IV value. 
 
@@ -167,7 +167,7 @@ from pyshifu import shifu
 
 
 * shifu train
-![shifu train](doc/images/pipline/train.png)
+![shifu train](pipline/train.png)
     
      One of Shifu's pros is that training in Shifu is very powerful:
      
@@ -213,7 +213,7 @@ from pyshifu import shifu
      After training is finished, you can find models trained in local folder <data set>/models/. Which can be used in production or evaluation step.
 
 * shifu eval
-![shifu eval](doc/images/pipline/eval.png)
+![shifu eval](pipline/eval.png)
 
      Evaluation step is to evaluate models you just trained. If multiple models are found in models folder. all will be evaluated and 'mean' model score is used to do final performance report.
 
