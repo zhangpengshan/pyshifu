@@ -5,7 +5,7 @@ pyshifu is a Python module for machine learning build on top of java version shi
 build high accuracy models with TB level data set in hours.          
 
 More details about shifu, visit shifu's wiki page: https://github.com/shifuml/shifu/wiki            
-![Shifu Pipeline](doc/images/logo/pipline.png)     
+![Shifu Pipeline](doc/images/pipline/pipline.png)     
 
 pyshifu provided the basic operations in the pipeline above, such as new, init, stats...        
 

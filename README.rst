@@ -120,4 +120,4 @@ Thanks
 python module. https://github.com/kyhau/python-repo-template
 
 .. |Build Status| image:: https://travis-ci.org/wuhaifengdhu/pyshifu.svg?branch=master :target: https://travis-ci.org/wuhaifengdhu/pyshifu
-.. |Shifu Pipeline| image:: doc/images/logo/pipline.png
+.. |Shifu Pipeline| image:: doc/images/pipline/pipline.png
