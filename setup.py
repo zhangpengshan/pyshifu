@@ -18,7 +18,7 @@ __email__ = "wuhaifengdhu@163.com"
 
 # Change this line to the module name you want to create
 __title__ = "pyshifu"
-__version__ = "0.0.1"
+__version__ = "0.0.5"
 __summary__ = "An end-to-end machine learning and data mining framework on Hadoop."
 __uri__ = "https://github.com/wuhaifengdhu/python-shifu"
 
@@ -28,7 +28,7 @@ __requirements__ = [
 
 
 def get_shifu_package_data():
-    _data_files = add_recursively('shifu/java/')
+    _data_files = add_recursively('pyshifu/java/')
     return _data_files
 
 
