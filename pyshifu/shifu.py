@@ -1,15 +1,20 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-from shifu.util.helper import Helper
-from shifu.core.shell import Shell
-from shifu.core.enums import CommandRunningStatus
+from pyshifu.util.helper import Helper
+from pyshifu.core.shell import Shell
+from pyshifu.core.enums import CommandRunningStatus
+from pyshifu.core.exception.base_exception import ShifuException
 
 
-class _Shifu(Shell):
+class Shifu(Shell):
     def __init__(self):
-        super(_Shifu, self).__init__()
+        super(Shifu, self).__init__()
 
     def new(self, name, work_dir=None):
-        self._init_working_directory(work_dir, name)
+        try:
+            self._init_working_directory(work_dir, name)
+        except ShifuException as exception:
+            print (exception.get_message())
+
         command_list = ['bash', self._main_script, 'new', self._name]
         status, output = Helper.run_shell(command_list)
         if status is CommandRunningStatus.SUCCESS:
@@ -38,8 +43,4 @@ class _Shifu(Shell):
 
     def eval(self):
         self.__run_command("eval")
-
-
-shifu = _Shifu()
-
 

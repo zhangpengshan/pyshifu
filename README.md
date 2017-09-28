@@ -23,7 +23,7 @@ Shifu Optional:
 Platform requirement:   
  * Mac    
  * Linux     
- * Windows(>=10586.1007)
+ * Windows(>=10586.1007)      
 As pyshifu currently depended on bash script to set environment, so windows without shell support could not work correctly.
 In the future, we will remove all shell script.
 

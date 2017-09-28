@@ -2,8 +2,8 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from subprocess import check_output, CalledProcessError
 from sys import platform
 from os import path, getcwd, environ, listdir
-from shifu.core.enums import Platform
-from shifu.core.enums import CommandRunningStatus
+from pyshifu.core.enums import Platform
+from pyshifu.core.enums import CommandRunningStatus
 
 
 class Helper(object):

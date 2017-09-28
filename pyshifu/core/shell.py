@@ -1,18 +1,22 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-from shifu.util.helper import Helper
+from pyshifu.util.helper import Helper
+from pyshifu.core.exception.field_exception import FieldException
 from os import path, getcwd, chdir
 
 
 class Shell(object):
     def __init__(self):
-        self._name = None  # set value when start run command new
-        self._work_dir = None  # set value when finish run command new
-        self._model_dir = None
-        self._model_config_file = None  # set value when work dir ready
+        self._name = None  # model name
+
+        self._work_dir = None  # work dir is the place you want to create model
+        self._model_dir = None  # model dir
+
         self._model_config_file_name = "ModelConfig.json"
+        self._model_config_file = None  # full path of the model config file
+
         self._os_platform = Helper.get_os_platform()
-        self._shifu_home = Helper.get_shifu_home()
-        self._main_script = path.join(self._shifu_home, "java", "bin", "shifu")
+        self._shifu_home = Helper.get_shifu_home()   # home directory where shifu script with java package
+        self._main_script = path.join(self._shifu_home, "java", "bin", "shifu")  # script to running command
 
     def _sanity_check(self):
         if self._model_config_file is None or not path.exists(self._model_config_file):
@@ -28,15 +32,15 @@ class Shell(object):
         print("Directory changed to " + getcwd())
 
     def __set_work_dir(self, work_dir):
-        if work_dir is None:
-            work_dir = getcwd()
-        self._work_dir = work_dir
+        if work_dir is not None:
+            chdir(work_dir)
+        self._work_dir = getcwd()
 
     def __set_model_name(self, model_name):
         if model_name is None:
-            raise ValueError("Model name can not be None!")
+            raise FieldException("Model name can not be None!")
         if self._work_dir is None:
-            raise ValueError("Setting model name while working dir is None!")
+            raise FieldException("Setting model name while working dir is None!")
         self._name = model_name
         self._model_dir = path.join(self._work_dir, self._name)
         self._model_config_file = path.join(self._model_dir, self._model_config_file_name)

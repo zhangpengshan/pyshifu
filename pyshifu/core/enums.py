@@ -18,3 +18,7 @@ class Step(object):
 
 class CommandRunningStatus(object):
     SUCCESS, FAILED = range(2)
+
+
+class ErrorNo(object):
+    PARAMETER_INVALID, FIELD_INVALID = range(2)
