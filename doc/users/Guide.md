@@ -22,9 +22,12 @@ conda install pyshifu
 Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu runtime. 
 
 * import shifu
+```bazaar
+from pyshifu import shifu
+```
 
-
-* `shifu new <dataset name>`
+* shifu new
+![shifu new](doc/images/pipline/new.png)
 
     This command will create a new dataset folder for training, in the new folder, You will find some auto-created files:
     1. ModelConfig.json: Some input and model pipeline configurations and which will be discussed more later.
@@ -80,7 +83,8 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
 
     Mostly in this part, user should config basic and dataSet path well, then in next steps all running are based on successful data paths and modes.    
    
-* `cd <dataset name>;shifu init`
+* shifu init
+![shifu init](doc/images/pipline/init.png)
 
      All next steps from init should be run in <data set folder>, this design is to make sure your running in different data sets are doable. 
 
@@ -88,8 +92,9 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
      
      So far numerical or categorical columns must be specified by users in columns/categorical.column.names. This is very important to do the right column stats and transform. Please do make sure you configure categorical columns here well.
 
-* `shifu stats`
-   
+* shifu stats
+![shifu stats](doc/images/pipline/stats.png)
+
      Stats step is used to collect statistics like mean, stddev, ks and other info by using MapReduce/Pig/Spark jobs.
 
      ```json
@@ -110,7 +115,9 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
 
      After stats running, you can find ColumnConfig.json updated in data set folder with mean, ks, binning and other stats info which can be used in next steps.
 
-* `shifu norm`
+* shifu norm
+
+![shifu new](doc/images/pipline/new.png)
      
      For logistic regression or neural network models, training input data should be normalized like z-score normalization or maxmin normalization. Such normalization methods are both supported in this step.
      
@@ -132,7 +139,8 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
 
      'woe' norm type is very important, it leverages binning information to transform numerical values into discrete values. This norm type improves model stability very well.
      
-* Mew `shifu varsel` In Shifu 0.10.0
+* shifu varsel
+![shifu varsel](doc/images/pipline/varsel.png)
 
   After stats and norm, varsel step is used for feature selection according to some statistic information like KS or IV value. 
 
@@ -157,39 +165,9 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
 
  For any detailed information, please check [https://github.com/ShifuML/shifu/wiki/Variable-Selection-in-Shifu](Variable Selection in Shifu)
 
-* Old `shifu varsel` Before Shifu 0.10.0
 
-     After stats and norm, varsel step is used for feature selection according to some statistic information like KS or IV value. 
-     
-     TODO: KS IV 
-
-     ```json
-        "varSelect" : {
-           "forceEnable" : true,
-           "forceSelectColumnNameFile" : "columns/forceselect.column.names",
-           "forceRemoveColumnNameFile" : "columns/forceremove.column.names",
-           "filterEnable" : true,
-           "filterNum" : 200,
-           "filterBy" : "KS",
-           "wrapperEnabled" : false,
-           "wrapperNum" : 50,
-           "wrapperRatio" : 0.05,
-           "wrapperBy" : "S",
-           "missingRateThreshold" : 0.98,
-           "filterBySE" : true,
-        },
-     ```
-    
-     * varSelect::forceEnable: If enable force remove and force selection features
-     * varSelect::filterEnable: If enable filter in variable selection
-     * varSelect::filterNum: How many features are selected including force selected features if forceEnable is tree
-     * varSelect::filterBy: Sorted by KS or IV 
-     * varSelect::wrapperEnabled: If wrapper is enabled for feature selection, wrapper related feature selection will be discuss later expecially for sensitivity analysis.
-     * varSelect::missingRateThreshold: If missing rate over such threshold, such feature will be dropped.
-
-     After this step finished, check 'finalSelect' = true in ColumnConfig.json to check the features selected in further training.
-
-* `shifu train`
+* shifu train
+![shifu train](doc/images/pipline/train.png)
     
      One of Shifu's pros is that training in Shifu is very powerful:
      
@@ -234,7 +212,8 @@ Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu
 
      After training is finished, you can find models trained in local folder <data set>/models/. Which can be used in production or evaluation step.
 
-* `shifu eval`
+* shifu eval
+![shifu eval](doc/images/pipline/eval.png)
 
      Evaluation step is to evaluate models you just trained. If multiple models are found in models folder. all will be evaluated and 'mean' model score is used to do final performance report.
 

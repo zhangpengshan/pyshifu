@@ -56,7 +56,7 @@ git clone https://github.com/ShifuML/pyshifu.git
 ```
 
 ### Setting up a development environment
-[Quick tutorial](doc/developers/guide.md) on how to go about setting up your environment to contribute to pyshifu.
+[Quick tutorial](doc/developers/Guide.md) on how to go about setting up your environment to contribute to pyshifu.
 
 ### Testing
 This project intend to make the python code 100% test coverage. You can test by tox.  
@@ -66,14 +66,14 @@ pip install -r requirements-build.txt
 tox -r
 ```
 ### Submitting a Pull Request
-Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our [Develop guide](doc/developers/guide.md).
+Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our [Develop Guide](doc/developers/Guide.md).
 ## Project History
 This project is started for help user using shifu in python environment. 
 
 ## Help and Support
 ### Documentation
-* User guide: [User guide](doc/users/guide.md)
-* Develop document: [Develop guide](doc/developers/guide.md)
+* User guide: [User Guide](doc/users/Guide.md)
+* Develop document: [Develop Guide](doc/developers/Guide.md)
 * FAQ page: https://github.com/ShifuML/pyshifu/wiki/FAQ-page
 
 ### Communication
