@@ -22,7 +22,7 @@ class TestHelper(unittest.TestCase):
             self.assertEqual(Helper.get_environment_variable("PWD"), Helper.get_current_path())
 
     def test_get_shifu_home(self):
-        self.assertEqual(Helper.get_shifu_home().split('/')[-1], "shifu")
+        self.assertEqual(Helper.get_shifu_home().split('/')[-1], "pyshifu")
 
     def test_set_os_environment(self):
         Helper.set_os_environment("SHIFU_HOME", "wu")
