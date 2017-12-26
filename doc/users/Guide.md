@@ -24,15 +24,15 @@ conda install pyshifu
 Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu runtime. 
 
 * import shifu
-```
-from pyshifu import shifu
-```
+    ```
+    from pyshifu import shifu
+    ```
 
 * shifu new    
 API: shifu.new(model_name, work_directory)
-```
->>> shifu.new("new_model", "/Users/haifwu/Model")
-```
+    ```
+    >>> shifu.new("new_model", "/Users/haifwu/Model")
+    ```
     shifu.new(model_name, work_directory)
     parameters: 
         model_name: the name of the new model
@@ -92,9 +92,9 @@ API: shifu.new(model_name, work_directory)
     Mostly in this part, user should config basic and dataSet path well, then in next steps all running are based on successful data paths and modes.    
    
 * shifu init
-```
->>> shifu.init()
-```
+    ```
+    >>> shifu.init()
+    ```
 
      All next steps from init should be run in <data set folder>, this design is to make sure your running in different data sets are doable. 
 
@@ -103,9 +103,9 @@ API: shifu.new(model_name, work_directory)
      So far numerical or categorical columns must be specified by users in columns/categorical.column.names. This is very important to do the right column stats and transform. Please do make sure you configure categorical columns here well.
 
 * shifu stats
-```
->>> shifu.stats()
-```
+    ```
+    >>> shifu.stats()
+    ```
 
      Stats step is used to collect statistics like mean, stddev, ks and other info by using MapReduce/Pig/Spark jobs.
 
@@ -128,9 +128,9 @@ API: shifu.new(model_name, work_directory)
      After stats running, you can find ColumnConfig.json updated in data set folder with mean, ks, binning and other stats info which can be used in next steps.
 
 * shifu norm
-```
->>> shifu.norm()
-```
+    ```
+    >>> shifu.norm()
+    ```
      
      For logistic regression or neural network models, training input data should be normalized like z-score normalization or maxmin normalization. Such normalization methods are both supported in this step.
      
@@ -153,9 +153,9 @@ API: shifu.new(model_name, work_directory)
      'woe' norm type is very important, it leverages binning information to transform numerical values into discrete values. This norm type improves model stability very well.
      
 * shifu varsel
-```
->>> shifu.varsel()
-```
+    ```
+    >>> shifu.varsel()
+    ```
 
   After stats and norm, varsel step is used for feature selection according to some statistic information like KS or IV value. 
 
@@ -178,13 +178,13 @@ API: shifu.new(model_name, work_directory)
      * varSelect::filterOutRatio: ratio of variables should be filtered out after running **shifu varselect**
      * varSelect::filterBy: type of variable selection type, like 'KS', 'IV', 'SE', 'FI'
 
- For any detailed information, please check [https://github.com/ShifuML/shifu/wiki/Variable-Selection-in-Shifu](Variable Selection in Shifu)
+   For any detailed information, please check [https://github.com/ShifuML/shifu/wiki/Variable-Selection-in-Shifu](Variable Selection in Shifu)
 
 
 * shifu train
-```
->>> shifu.train()
-```
+    ```
+    >>> shifu.train()
+    ```
     
      One of Shifu's pros is that training in Shifu is very powerful:
      
@@ -230,9 +230,9 @@ API: shifu.new(model_name, work_directory)
      After training is finished, you can find models trained in local folder <data set>/models/. Which can be used in production or evaluation step.
 
 * shifu eval
-```
->>> shifu.eval()
-```
+    ```
+    >>> shifu.eval()
+    ```
 
      Evaluation step is to evaluate models you just trained. If multiple models are found in models folder. all will be evaluated and 'mean' model score is used to do final performance report.
 
