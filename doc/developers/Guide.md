@@ -24,13 +24,16 @@ conda install pyshifu
 Shifu will parse your Hadoop platform settings and set all Hadoop conf for Shifu runtime. 
 
 * import shifu
-```bazaar
+```
 from pyshifu import shifu
 ```
 
-* shifu new
-![shifu new](../images/pipline/new.png)
-
+* shifu new    
+API: shifu.new(model_name, work_directory)
+```
+>>> shifu.new("new_model", "/Users/haifwu/Model")
+```
+ 
     This command will create a new dataset folder for training, in the new folder, You will find some auto-created files:
     1. ModelConfig.json: Some input and model pipeline configurations and which will be discussed more later.
        
@@ -86,7 +89,9 @@ from pyshifu import shifu
     Mostly in this part, user should config basic and dataSet path well, then in next steps all running are based on successful data paths and modes.    
    
 * shifu init
-![shifu init](../images/pipline/init.png)
+```
+>>> shifu.init()
+```
 
      All next steps from init should be run in <data set folder>, this design is to make sure your running in different data sets are doable. 
 
@@ -118,8 +123,9 @@ from pyshifu import shifu
      After stats running, you can find ColumnConfig.json updated in data set folder with mean, ks, binning and other stats info which can be used in next steps.
 
 * shifu norm
-
-![shifu new](../images/pipline/new.png)
+```
+>>> shifu.norm()
+```
      
      For logistic regression or neural network models, training input data should be normalized like z-score normalization or maxmin normalization. Such normalization methods are both supported in this step.
      
@@ -142,7 +148,9 @@ from pyshifu import shifu
      'woe' norm type is very important, it leverages binning information to transform numerical values into discrete values. This norm type improves model stability very well.
      
 * shifu varsel
-![shifu varsel](../images/pipline/varsel.png)
+```
+>>> shifu.varsel()
+```
 
   After stats and norm, varsel step is used for feature selection according to some statistic information like KS or IV value. 
 
@@ -169,7 +177,9 @@ from pyshifu import shifu
 
 
 * shifu train
-![shifu train](../images/pipline/train.png)
+```
+>>> shifu.train()
+```
     
      One of Shifu's pros is that training in Shifu is very powerful:
      
@@ -215,7 +225,9 @@ from pyshifu import shifu
      After training is finished, you can find models trained in local folder <data set>/models/. Which can be used in production or evaluation step.
 
 * shifu eval
-![shifu eval](../images/pipline/eval.png)
+```
+>>> shifu.eval()
+```
 
      Evaluation step is to evaluate models you just trained. If multiple models are found in models folder. all will be evaluated and 'mean' model score is used to do final performance report.
 
