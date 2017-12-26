@@ -33,7 +33,10 @@ API: shifu.new(model_name, work_directory)
 ```
 >>> shifu.new("new_model", "/Users/haifwu/Model")
 ```
- 
+    shifu.new(model_name, work_directory)
+    parameters: 
+        model_name: the name of the new model
+        work_directory: the new model will be created under this work directory
     This command will create a new dataset folder for training, in the new folder, You will find some auto-created files:
     1. ModelConfig.json: Some input and model pipeline configurations and which will be discussed more later.
        
@@ -100,7 +103,9 @@ API: shifu.new(model_name, work_directory)
      So far numerical or categorical columns must be specified by users in columns/categorical.column.names. This is very important to do the right column stats and transform. Please do make sure you configure categorical columns here well.
 
 * shifu stats
-![shifu stats](../images/pipline/stats.png)
+```
+>>> shifu.stats()
+```
 
      Stats step is used to collect statistics like mean, stddev, ks and other info by using MapReduce/Pig/Spark jobs.
 
