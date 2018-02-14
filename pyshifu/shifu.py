@@ -17,14 +17,13 @@ class Shifu(Shell):
 
         command_list = ['bash', self._main_script, 'new', self._name]
         status, output = Helper.run_shell(command_list)
-        if status is CommandRunningStatus.SUCCESS:
+        if status == CommandRunningStatus.SUCCESS:
             self._change_to_model_dir()
-            print("You can edit file:" + self._model_config_file)
-            Helper.edit_file(self._os_platform, self._model_config_file)
-
-    def __run_command(self, command):
-        command_list = ['bash', self._main_script, command]
-        Helper.run_shell(command_list)
+            print ("Configure your ModelConfig.json in %s or directly do initialization step by 'shifu.init()'" %
+                   self.model_config_file)
+            Helper.edit_file(self._os_platform, self.model_config_file)
+        else:
+            print ("Shifu.new() failed! Please check if you successfully install pyshifu.")
 
     def init(self):
         self.__run_command("init")
